@@ -1,0 +1,36 @@
+!!! 5
+%html(lang="ja")
+%head
+	%meta(http-equiv="Content-Type" content="text/html" charset="UTF-8")
+	%meta(http-equiv="Content-Language" content="en")
+	%meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+	%meta(name="description" content="ついエンジニアが使いたくなる小道具を集めました")
+	%meta(name="auhthor" content="onokatio")
+	%meta(name="application-name" content="web系ツール")
+	%link(crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" rel="stylesheet")
+	%title web系ツール
+%body
+	#colorcode
+		%h1 カラーコードを色にする奴
+		%input(type="text")
+	#test
+		%h1 カラーコードを色にする奴
+		%input(type="text")
+
+	%script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+	:javascript
+		$(document).ready(function(){
+			$('#colorcode > input').bind('keyup',function(){
+				var s = $(this).val();
+				if(s.length==3||s.length==5){
+					var w = s.length/2;
+					var a = str.substr(0,w);
+					var b = str.substr(w,w);
+					var c = str.substr(w+w,w);
+					
+					$(this).css('background-color','#'+s);
+				}else{
+					$(this).css('background-color','#fff');
+				}
+			});
+		});

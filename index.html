@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='ja'></html>
+<head>
+<meta charset='UTF-8' content='text/html' http-equiv='Content-Type'>
+<meta content='en' http-equiv='Content-Language'>
+<meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'>
+<meta content='ついエンジニアが使いたくなる小道具を集めました' name='description'>
+<meta content='onokatio' name='auhthor'>
+<meta content='web系ツール' name='application-name'>
+<link crossorigin='anonymous' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css' integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ' rel='stylesheet'>
+<title>web系ツール</title>
+</head>
+<body>
+<div id='colorcode'>
+<h1>カラーコードを色にする奴</h1>
+<input type='text'>
+</div>
+<div id='test'>
+<h1>カラーコードを色にする奴</h1>
+<input type='text'>
+</div>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+<script>
+  $(document).ready(function(){
+  	$('#colorcode > input').bind('keyup',function(){
+  		var s = $(this).val();
+  		if(s.length==3||s.length==5){
+  			var w = s.length/2;
+  			var a = str.substr(0,w);
+  			var b = str.substr(w,w);
+  			var c = str.substr(w+w,w);
+  			
+  			$(this).css('background-color','#'+s);
+  		}else{
+  			$(this).css('background-color','#fff');
+  		}
+  	});
+  });
+</script>
+</body>
